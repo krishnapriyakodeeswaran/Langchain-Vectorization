@@ -89,8 +89,23 @@ Graph nodes: ['__start__', 'load', 'split', 'embed', 'store', '__end__']
 
 Query: "How is the submission evaluated?"
 
-(paste 1 or 2 results from your new results.json here)
-
+"query": "How is the submission evaluated?",
+    "results": [
+      {
+        "chunk_text": "following contributors for evaluation:\n- bishal@nestack.com\n- sannidhya@nestack.com\n- sanjay@nestack.com\nYour submission must include:\n- A ZIP file of your complete codebase\n- A live deployment link\n- Any necessary credentials if your project includes authentication\nAdditionally, ensure your repository includes a README.md with:\n- The deployment link clearly mentioned\n- Setup and run instructions if applicable\nNOTE: PUBLIC REPOSITORIES ARE DISQUALIFIED FROM THE HIRING PROCESS",
+        "page_number": 2,
+        "score": 1.6420300006866455
+      },
+      {
+        "chunk_text": "Technical Assessment - Nestack \nDo not share or distribute this document. Page PAGE \nEVALUATION \nCriterion Weight What we look for \nPipeline runs end-to-end without errors 35% Ingestion completes; retrieval returns \nrelevant results. \nCorrect use of LangChain primitives for each stage 25% Right component used for the right \npurpose; no misuse of chains. \nRetrieval quality - relevance of returned chunks 20% results.json entries are semantically \nrelevant to each query. \nREADME quality and component choices with reasoning 15% Can justify each LangChain component \nselected. \nLangGraph graph structure and documentation (bonus) +5% Named nodes, documented flow, \ninspectable graph. \nInstructions\nKindly create a private GitHub repository named: {yourName_Nestack_Submission} (e.g., roy_Nestack_Submission) and add the \nfollowing contributors for evaluation:\n- bishal@nestack.com\n- sannidhya@nestack.com\n- sanjay@nestack.com\nYour submission must include:\n- A ZIP file of your complete codebase",
+        "page_number": 2,
+        "score": 1.753283977508545
+      },
+      {
+        "chunk_text": "\u2022 LangGraph is optional but will be evaluated positively if the graph is well-structured and documented. \n\u2022 Do not use RetrievalQA, ConversationalRetrievalChain, or any pre-built RAG chain for the retrieval endpoint. \n\u2022 The pipeline must run successfully on the sample PDF provided on the assessment platform. \nDELIVERABLES \n\u2022 Ingestion script and retrieval server, fully runnable from your README instructions. \n\u2022 README: setup and install steps (include a requirements.txt), justification for your choice of loader, splitter, \nembedding model, and vector store, and sample output from the provided PDF. \n\u2022 results.json: output of at least three different queries run against the provided PDF, in the response format above. \n\u2022 If LangGraph is used: a printed node list or diagram showing the ingestion graph structure, included in the README.",
+        "page_number": 1,
+        "score": 1.7976305484771729
+      }
 The full output for five queries is in `results.json`.
 
 ## Project structure
