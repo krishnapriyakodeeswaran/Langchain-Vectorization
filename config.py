@@ -1,4 +1,4 @@
-EMBED_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBED_MODEL = "BAAI/bge-small-en-v1.5"
 INDEX_DIR = "faiss_index"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200

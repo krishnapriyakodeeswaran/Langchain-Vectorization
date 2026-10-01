@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 
 from config import EMBED_MODEL, INDEX_DIR
@@ -8,8 +8,7 @@ from config import EMBED_MODEL, INDEX_DIR
 app = FastAPI(title="PDF Vector Search")
 
 # Must be the same embedding settings as ingest.py
-embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
-
+embeddings = FastEmbedEmbeddings(model_name=EMBED_MODEL, cache_dir="models")
 # Load the FAISS index that ingest.py saved
 vectorstore = FAISS.load_local(
     INDEX_DIR, embeddings, allow_dangerous_deserialization=True

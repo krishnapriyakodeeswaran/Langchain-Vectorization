@@ -3,7 +3,7 @@ from typing import TypedDict
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 from langgraph.graph import StateGraph, START, END
 
@@ -15,8 +15,7 @@ class State(TypedDict, total=False):
     chunks: list       # small pieces of text
     vectorstore: object
 
-embeddings = HuggingFaceEmbeddings(model_name=EMBED_MODEL)
-
+embeddings = FastEmbedEmbeddings(model_name=EMBED_MODEL, cache_dir="models")
 def load(state):
     pages = PyPDFLoader(state["file"]).load()
     print("Step 1 - loaded pages:", len(pages))
