@@ -1,5 +1,6 @@
 # langchain_vectorization
 Assessment on Langchain Vectorization - Nestack Technologies
+**Live deployment:** https://krishnapriya-nestack-submission-1.onrender.com/docs
 ## Ingestion Graph (LangGraph)
 
 Nodes: `load` -> `split` -> `embed` -> `store`
